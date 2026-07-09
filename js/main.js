@@ -27,12 +27,24 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => observer.observe(section));
   }
 
-  // Filter pills (visual only for now — all projects shown)
+  // Filter pills — show/hide project cards by category
   const pills = document.querySelectorAll('.filter-pill');
+  const cards = document.querySelectorAll('.project-card[data-category]');
+
   pills.forEach(pill => {
     pill.addEventListener('click', () => {
       pills.forEach(p => p.classList.remove('active'));
       pill.classList.add('active');
+
+      const filter = pill.getAttribute('data-filter');
+
+      cards.forEach(card => {
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
     });
   });
 });
