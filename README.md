@@ -27,6 +27,21 @@ Just open `index.html` in a browser, no build step required.
 
 Each project is a `.project-card` block in `index.html`. Copy an existing block, update the `id`, heading, description, and meta fields, then add a matching `.nav-item` in the sidebar with a `data-target` pointing to that `id`.
 
+## Adding GIFs to the Visual Walkthroughs section
+
+1. Export your screen recording as a `.gif` (Storylane and most screen recorders can export directly, or use a tool like Gifski/CloudConvert to convert a screen recording).
+2. Keep file size reasonable (under ~5MB ideally) so the page loads quickly. GitHub has a 100MB per-file limit, but smaller is always better for page speed.
+3. Drop the file into `/assets/`, e.g. `assets/storylane-walkthrough.gif`.
+4. In `index.html`, find the `.visual-card` blocks near the bottom and confirm the `<img src="assets/your-file.gif">` path matches your filename exactly (case-sensitive).
+5. Commit and push as usual.
+
+Two placeholder slots are already wired up:
+- `assets/storylane-walkthrough.gif`
+- `assets/hubspot-workflow-trial.gif`
+
+Until real GIFs are added, these will show as broken image icons — that's expected and will resolve once the files are in place.
+
+
 ## Notes
 
 - Font is set to `Calibri` with system fallbacks (`Segoe UI`, `Helvetica Neue`, `Arial`) since Calibri isn't a licensed web font — it will render as Calibri on Windows and fall back to a similar system sans elsewhere.
