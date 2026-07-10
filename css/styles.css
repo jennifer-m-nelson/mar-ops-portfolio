@@ -255,6 +255,43 @@
   .metric-strip .m .num{font-size:20px;font-weight:700;}
   .metric-strip .m .lab{font-size:11px;color:var(--muted);text-transform:uppercase;font-weight:600;}
 
+  /* VISUAL WALKTHROUGHS */
+  .visual-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin-bottom:44px;
+  }
+  .visual-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .visual-media{
+    width:100%;
+    aspect-ratio:16/9;
+    background:var(--bg);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+  }
+  .visual-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .visual-caption{padding:16px 18px;}
+  .v-title{font-weight:700;font-size:14.5px;margin-bottom:3px;}
+  .v-sub{font-size:13px;color:var(--muted);}
+
+  @media (max-width:700px){
+    .visual-grid{grid-template-columns:1fr;}
+  }
+
   footer{
     border-top:1px solid var(--border);
     padding:28px 0;
